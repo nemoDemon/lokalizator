@@ -9,16 +9,16 @@ var methods =
 			const response = await fetch(addressUrl);
 			const json = await response.json();
 
-			var address = await json.results[0].formatted_address;
-			var latitude = await json.results[0].geometry.location.lat;
-			var longtitude = await json.results[0].geometry.location.lng;
+			var address = json.results[0].formatted_address;
+			var latitude = json.results[0].geometry.location.lat;
+			var longtitude = json.results[0].geometry.location.lng;
 
 			console.log("Address: " + address);
 			console.log("Latitude: " + latitude);
 			console.log("Longtitude: " + longtitude);
 
-			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
-			return Promise.resolve(returnStr);
+			var returnStr = await "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
+			return returnStr;
 		}
 		catch(error)
 		{
