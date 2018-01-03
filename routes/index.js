@@ -6,7 +6,7 @@ const addressUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: d4.modules.getLocation(addressUrl) });
+  res.render('index', { title: d4.modules.getLocation(addressUrl).then(v => {v}) });
 });
 
 module.exports = router;
