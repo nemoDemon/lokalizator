@@ -7,11 +7,11 @@ var methods =
 		try
 		{
 			const response = fetch(addressUrl);
-			const json = response.json();
+			//const json = response.json();
 
-			var address = json.results[0].formatted_address;
-			var latitude = json.results[0].geometry.location.lat;
-			var longtitude = json.results[0].geometry.location.lng;
+			var address = response.json.results[0].formatted_address;
+			var latitude = response.json.results[0].geometry.location.lat;
+			var longtitude = response.json.results[0].geometry.location.lng;
 
 			console.log("Address: " + address);
 			console.log("Latitude: " + latitude);
