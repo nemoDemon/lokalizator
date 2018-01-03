@@ -6,8 +6,8 @@ var methods =
 	{
 		try
 		{
-			const response = await fetch(addressUrl);
-			const json = await response.json();
+			const r = await fetch(addressUrl);
+			const json = await r.json();
 
 			var address = json.results[0].formatted_address;
 			var latitude = json.results[0].geometry.location.lat;
@@ -17,8 +17,8 @@ var methods =
 			console.log("Latitude: " + latitude);
 			console.log("Longtitude: " + longtitude);
 
-			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
-			return returnStr;
+			const response = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
+			return response;
 		}
 		catch(error)
 		{
