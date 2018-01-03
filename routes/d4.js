@@ -13,9 +13,9 @@ var methods =
 			var latitude = json.results[0].geometry.location.lat;
 			var longtitude = json.results[0].geometry.location.lng;
 
-			//console.log("Address: " + address);
-			//console.log("Latitude: " + latitude);
-			//console.log("Longtitude: " + longtitude);
+			console.log("Address: " + address);
+			console.log("Latitude: " + latitude);
+			console.log("Longtitude: " + longtitude);
 
 			var returnedString = "Address: " + address;
 			return returnedString;
