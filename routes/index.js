@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var d4 = require('d4.js');
+var d4 = require('./d4.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
