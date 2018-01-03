@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 var methods =
 {
 	 getLocation: async function(addressUrl)
@@ -16,7 +18,7 @@ var methods =
 		  console.log("Longtitude: " + longtitude);
 
 		  var returnedString = "Address: " + address;
-		  return returnedString;
+		  return returnedString.toString();
 		}
 		catch(error)
 		{
