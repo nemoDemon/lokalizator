@@ -18,7 +18,7 @@ var methods =
 			console.log("Longtitude: " + longtitude);
 
 			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
-			return returnStr;
+			return "elo";
 		}
 		catch(error)
 		{
