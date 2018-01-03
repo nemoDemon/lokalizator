@@ -23,6 +23,7 @@ var methods =
 		catch(error)
 		{
 			console.log(error);
+return "Error";
 		}
 
 	}
