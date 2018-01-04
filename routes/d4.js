@@ -2,12 +2,12 @@ const fetch = require("node-fetch");
 
 var methods =
 {
-	getLocation: function(addressUrl)
+	getLocation: async function(addressUrl)
 	{
 		try
 		{
-			const response = fetch(addressUrl);
-			const json = response.json();
+			const response = await fetch(addressUrl);
+			const json = await response.json();
 
 			var address = json.results[0].formatted_address;
 			var latitude = json.results[0].geometry.location.lat;
