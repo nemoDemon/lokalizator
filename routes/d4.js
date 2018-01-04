@@ -17,8 +17,52 @@ var methods =
 			console.log("Latitude: " + latitude);
 			console.log("Longtitude: " + longtitude);
 
-			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
+			var returnStr = address + ";" + latitude + ";" + longtitude;
 			return returnStr;
+		}
+		catch(error)
+		{
+			console.log(error);
+			return "Error: " + error;
+		}
+	},
+
+	getElevation: async function(elevationUrl)
+	{
+		try
+		{
+			const response = await fetch(elevationUrl);
+			const json = await response.json();
+
+			var elevation = json.results[0].elevation;
+	
+			console.log("Elevation: " + elevation);
+
+			return elevation;
+		}
+		catch(error)
+		{
+			console.log(error);
+			return "Error: " + error;
+		}
+	},
+
+	getDateAndTime: async function(dateAndTimeUrl)
+	{
+		try
+		{
+			const response = await fetch(dateAndTimeUrl);
+			const json = await response.json();
+
+			var timestamp = new Date().getTime();
+			var dstOffset = json.dstOffset;
+			var rawOffset = json.rawOffset;
+	
+			var dateAndTime = new Date(timestamp + dstOffset + rawOffset);
+		
+			console.log("Date and time: " + dateAndTime);
+
+			return dateAndTime;
 		}
 		catch(error)
 		{
