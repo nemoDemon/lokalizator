@@ -13,6 +13,7 @@ router.get('/', async function(req, res) {
 router.post('/', async function (req, res) {
 	console.log("req: " + req);
 	var add = "https://maps.googleapis.com/maps/api/geocode/json?address="+req;
+console.log(add);
   	var zmienna = await d4.modules.getLocation(add);
 	res.render('index', { title: zmienna });
 });
