@@ -20,8 +20,8 @@ router.post('/', async function(req, res) {
 	var latitude = adressArray[1];
 	var longtitude = adressArray[2];
 
-	var elevationsUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude;
-	var elevation = await d4.modules.getElevation(elevationsUrl);
+	var elevationUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude;
+	var elevation = await d4.modules.getElevation(elevationUrl);
 
 	var timezoneOffset = new Date().getTimezoneOffset();
 	var dateAndTimeUrl = "https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+timezoneOffset;
