@@ -20,11 +20,11 @@ router.post('/', async function(req, res) {
 	var longtitude = adressArray[2];
 
 	var elevationsUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude;//+"&key=YOUR_API_KEY";
-	var elevation = await getElevation(elevationsUrl);
+	var elevation = await d4.modules.getElevation(elevationsUrl);
 
 	var timezoneOffset = new Date().getTimezoneOffset();
 	var dateAndTimeUrl = "https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+timezoneOffset;//&key=YOUR_API_KEY
-	var dateAndTime = await getDateAndTime(dateAndTimeUrl);
+	var dateAndTime = await d4.modules.getDateAndTime(dateAndTimeUrl);
 
 	var answer = "Address: " + address + " Date and time: " + dateAndTime;
 
