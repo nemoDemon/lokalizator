@@ -4,7 +4,7 @@ var methods =
 {
 	getLocation: async function(addressUrl)
 	{
-return new Promise(function(resolve, reject){
+return new Promise(async function(resolve, reject){
 		try
 		{
 			const response = await fetch(addressUrl);
