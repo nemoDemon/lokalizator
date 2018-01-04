@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 var methods =
 {
-	getLocation: async function(addressUrl)
+	getLocation: function(addressUrl)
 	{
 		try
 		{
