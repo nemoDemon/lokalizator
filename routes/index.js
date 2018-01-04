@@ -12,7 +12,9 @@ router.get('/', async function(req, res) {
 
 router.post('/', async function(req, res) {
 	var town = req.body.town;
-	res.render('index', { title: town });
+	var address = "https://maps.googleapis.com/maps/api/geocode/json?address="+town;
+	var zmienna = await d4.modules.getLocation(addressUrl);
+	res.render('index', { title: zmienna });
 });
 
 
