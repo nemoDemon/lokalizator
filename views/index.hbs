@@ -1,7 +1,14 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}!</p>
+<p>{{text}}</p>
 
- <form action="/" method="post">
-  Request: <input type="text" name="town">
-  <input type="submit" value="Submit">
-</form> 
+<p>
+	<form action="/" method="post">
+		Request: <input type="text" name="town">
+		<input type="submit" value="Search">
+	</form>
+</p> 
+
+<p>
+	Address: {{address}} <br />
+	Date and time: {{dateAndTime}} <br />
+</p>
