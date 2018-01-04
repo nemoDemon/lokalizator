@@ -27,8 +27,6 @@ router.post('/', async function(req, res) {
 	var dateAndTimeUrl = "https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+timezoneOffset;
 	var dateAndTime = await d4.modules.getDateAndTime(dateAndTimeUrl);
 
-	//var answer = "Address: " + address + " Latitude: " + longtitude + " Longtitude: " + longtitude + " Date and time: " + dateAndTime;
-
 	var title = "Lokalizator";
 	var text = "Found details are presented below..."
 	res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
