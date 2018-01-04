@@ -31,7 +31,7 @@ router.post('/', async function(req, res) {
 
 	var title = "Lokalizator";
 	var text = "Found details are presented below..."
-	res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, dateAndTime: dateAndTime });
+	res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
 });
 
 
