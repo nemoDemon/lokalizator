@@ -4,6 +4,7 @@ var methods =
 {
 	getLocation: async function(addressUrl)
 	{
+return new Promise(function(resolve, reject){
 		try
 		{
 			const response = await fetch(addressUrl);
@@ -18,13 +19,14 @@ var methods =
 			console.log("Longtitude: " + longtitude);
 
 			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
-			return returnStr;
+			resolve(returnStr);
 		}
 		catch(error)
 		{
 			console.log(error);
-			return "Error: " + error;
+			reject(error);
 		}
+});
 	}
 
 };
