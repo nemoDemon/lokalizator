@@ -4,11 +4,10 @@ var methods =
 {
 	getLocation: async function(addressUrl)
 	{
-return new Promise(async function(resolve, reject){
 		try
 		{
-			const response = await fetch(addressUrl);
-			const json = await response.json();
+			const response = fetch(addressUrl);
+			const json = response.json();
 
 			var address = json.results[0].formatted_address;
 			var latitude = json.results[0].geometry.location.lat;
@@ -19,14 +18,13 @@ return new Promise(async function(resolve, reject){
 			console.log("Longtitude: " + longtitude);
 
 			var returnStr = "Address: " + address + " Latitude: " + latitude + " Longtitude: " + longtitude;
-			resolve(returnStr);
+			return returnStr;
 		}
 		catch(error)
 		{
 			console.log(error);
-			reject(error);
+			return "Error: " + error;
 		}
-});
 	}
 
 };

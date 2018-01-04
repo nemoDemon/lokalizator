@@ -6,11 +6,11 @@ const addressUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-//var zmienna = await d4.modules.getLocation(addressUrl);
-d4.modules.getLocation(addressUrl).then(function(response)
-{res.render('index', response)}
-);
-  //res.render('index', { title: d4.modules.getLocation(addressUrl) });
+var zmienna = d4.modules.getLocation(addressUrl);
+//d4.modules.getLocation(addressUrl).then(function(response)
+//{res.render('index', response)}
+//);
+  res.render('index', { title: zmienna });
 });
 
 module.exports = router;
