@@ -19,16 +19,22 @@
     <h3>My Google Maps Demo</h3>
     <div id="map"></div>
     <script>
-      function initMap() {
-        var uluru = {lat: 28, lng: 28};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+	var vlat = {{latitude}};
+	var vlng = {{longtitude}};
+      function initMap() 
+	{
+	if(vlat >= 0 && vlat < 360 && vlng >= 0 && vlng < 360)
+	{
+		var uluru = {lat: vlat, lng: vlng};
+		var map = new google.maps.Map(document.getElementById('map'), {
+		  zoom: 4,
+		  center: uluru
+		});
+		var marker = new google.maps.Marker({
+		  position: uluru,
+		  map: map
+		});
+	}
       }
     </script>
     <script async defer
