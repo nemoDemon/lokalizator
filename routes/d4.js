@@ -17,7 +17,7 @@ var methods =
 			console.log("Latitude: " + latitude);
 			console.log("Longtitude: " + longtitude);
 
-			var returnStr = address + ";" + latitude + ";" + longtitude;
+			var returnStr = await address + ";" + latitude + ";" + longtitude;
 			return returnStr;
 		}
 		catch(error)
