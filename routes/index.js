@@ -20,18 +20,18 @@ router.post('/', async function(req, res) {
 	var latitude = adressArray[1];
 	var longtitude = adressArray[2];
 
-	/*var elevationUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude+"&key=YOUR_API_KEY";
+	var elevationUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude+"&key=AIzaSyAOCM4z1CH2j0LldnBXPXh91fKlx8ZTMBk";
 	var elevation = await d4.modules.getElevation(elevationUrl);
 
 	var timezoneOffset = new Date().getTimezoneOffset();
-	var dateAndTimeUrl = "https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+timezoneOffset+"&key=YOUR_API_KEY";
+	var dateAndTimeUrl = "https://maps.googleapis.com/maps/api/timezone/json?location="+latitude+","+longtitude+"&timestamp="+timezoneOffset+"&key=AIzaSyAE2Fap3dFbhYgs7OfhMsCKz97u1fI7Lcs";
 	var dateAndTime = await d4.modules.getDateAndTime(dateAndTimeUrl);
 
 	var title = "Lokalizator";
 	var text = "Found details are presented below..."
-*/
-	//res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
-	res.render('index', { address: address, latitude: latitude, longtitude: longtitude });
+
+	res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
+
 });
 
 
