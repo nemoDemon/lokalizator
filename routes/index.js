@@ -10,7 +10,7 @@ router.get('/', async function(req, res) {
 	res.render('index', { title: title, text: text });
 });
 
-router.post('/', async function(req, res) {
+router.post('/', function(req, res) {
 	var addressPosted=  req.body.town;
 	var adressUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+addressPosted;
 	var adressReturned = d4.modules.getLocation(adressUrl);
