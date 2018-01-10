@@ -20,7 +20,7 @@ router.post('/', async function(req, res) {
 	var latitude = adressArray[1];
 	var longtitude = adressArray[2];
 
-	var elevationUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude;
+	/*var elevationUrl = "https://maps.googleapis.com/maps/api/elevation/json?locations="+latitude+","+longtitude;
 	var elevation = await d4.modules.getElevation(elevationUrl);
 
 	var timezoneOffset = new Date().getTimezoneOffset();
@@ -29,7 +29,9 @@ router.post('/', async function(req, res) {
 
 	var title = "Lokalizator";
 	var text = "Found details are presented below..."
-	res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
+*/
+	//res.render('index', { title: title, text: text, address: address, latitude: latitude, longtitude: longtitude, elevation: elevation, dateAndTime: dateAndTime });
+	res.render('index', { address: address, latitude: latitude, longtitude: longtitude });
 });
 
 
