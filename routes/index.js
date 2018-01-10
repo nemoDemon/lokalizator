@@ -13,7 +13,7 @@ router.get('/', async function(req, res) {
 router.post('/', async function(req, res) {
 	var addressPosted =  req.body.town;
 	var adressUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+addressPosted;
-	var adressReturned = d4.modules.getLocation(adressUrl);
+	var adressReturned = await d4.modules.getLocation(adressUrl);
 	var adressArray = adressReturned.split(";");
 
 	var address = adressArray[0];
