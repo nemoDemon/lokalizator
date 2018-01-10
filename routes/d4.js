@@ -9,9 +9,9 @@ var methods =
 			const response = await fetch(addressUrl);
 			const json = await response.json();
 
-			var address = json.results[0].formatted_address;
-			var latitude = json.results[0].geometry.location.lat;
-			var longtitude = json.results[0].geometry.location.lng;
+			var address = await json.results[0].formatted_address;
+			var latitude = await json.results[0].geometry.location.lat;
+			var longtitude = await json.results[0].geometry.location.lng;
 
 			console.log("Address: " + address);
 			console.log("Latitude: " + latitude);
