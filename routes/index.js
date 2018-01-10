@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
 	var addressPosted=  req.body.town;
 	var adressUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+addressPosted;
 	var adressReturned = d4.modules.getLocation(adressUrl);
-	var adressArray = adressReturned.split(";");
+	var adressArray = adressReturned.toString().split(";");
 
 	var address = adressArray[0];
 	var latitude = adressArray[1];
